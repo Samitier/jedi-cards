@@ -1,0 +1,7 @@
+{
+	"/api": {
+		"target": "http://jedi-card-api.herokuapp.com",
+		"secure": false,
+		"logLevel": "info"
+	}
+}

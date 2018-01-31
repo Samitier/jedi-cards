@@ -1,0 +1,25 @@
+<div class="login">
+	<h1 class="text-center">♢ JEDI Cards ♢</h1>
+	<h4 class="text-center">Por favor, introduce tu usuario y contraseña.</h4>
+	<div class="form-section">
+		<label for="email">Email</label>
+		<input type="text" name="email" [(ngModel)]="email">
+	</div>
+	<div class="form-section">
+		<label for="password">Password</label>
+		<input 
+			type="password" 
+			name="password" 
+			[(ngModel)]="password"
+		>
+		<small *ngIf="!isPasswordCorrect()">
+			El password debe tener mínimo {{ minLengthPassword }} letras.
+		</small>
+	</div>
+	<br>
+	<a 
+		class="btn btn-ok"
+		(click)="onSend()"
+		[class.disabled]="!password || !email || !isPasswordCorrect()"
+	>Entrar</a>
+</div>

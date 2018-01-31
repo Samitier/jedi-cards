@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
-import SocialLink from '../_models/social-link.model';
-import AboutProject from '../_models/about-project.model';
-import AboutAuthor from '../_models/about-author.model';
+import SocialLink from '../_models/social-link.model'
+import AboutProject from '../_models/about-project.model'
+import AboutAuthor from '../_models/about-author.model'
 
 @Component({
 	selector: 'app-about',
