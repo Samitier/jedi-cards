@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../_shared/_services/api.service';
-import Deck from '../_models/deck.model';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core'
+import { ApiService } from '../_shared/_services/api.service'
+import Deck from '../_models/deck.model'
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
 	selector: 'app-deck-detail',

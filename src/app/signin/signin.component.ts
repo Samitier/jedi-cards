@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
-import User from '../_models/user.model';
-import { ApiService } from '../_shared/_services/api.service';
-import { Router } from '@angular/router';
+import User from '../_models/user.model'
+import { ApiService } from '../_shared/_services/api.service'
+import { Router } from '@angular/router'
 
 @Component({
 	selector: 'app-signin',

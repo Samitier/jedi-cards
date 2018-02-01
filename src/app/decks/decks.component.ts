@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { ApiService } from '../_shared/_services/api.service';
-import Deck from '../_models/deck.model';
+import { ApiService } from '../_shared/_services/api.service'
+import Deck from '../_models/deck.model'
 
 @Component({
 	selector: 'app-decks',

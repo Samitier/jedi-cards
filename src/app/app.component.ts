@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { Router, NavigationStart } from '@angular/router';
-import { AuthService } from './_shared/_services/auth.service';
+import { Router, NavigationStart } from '@angular/router'
+import { AuthService } from './_shared/_services/auth.service'
 
 @Component({
 	selector: 'app-root',

@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import User from '../../_models/user.model';
-import { Router } from '@angular/router';
-import { AuthService } from './auth.service';
-import Deck from '../../_models/deck.model';
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import User from '../../_models/user.model'
+import { Router } from '@angular/router'
+import { AuthService } from './auth.service'
+import Deck from '../../_models/deck.model'
 
 @Injectable()
 export class ApiService {
@@ -51,7 +51,7 @@ export class ApiService {
 		.toPromise()
 		.catch(e => this.handleError(e))
 	}
-	
+
 	postDeck(deck: Deck) {
 		return this._http.post(this.apiUrl + 'decks', deck)
 		.toPromise()

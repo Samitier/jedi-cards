@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
-import { ApiService } from '../_shared/_services/api.service';
-import { Router } from '@angular/router';
+import { ApiService } from '../_shared/_services/api.service'
+import { Router } from '@angular/router'
 
 @Component({
 	selector: 'app-login',
