@@ -25,11 +25,12 @@ export class DecksComponent implements OnInit {
 			})
 	}
 
-	onDeleteDeck(id: string) {
+	onDeleteDeck(id: string, event: MouseEvent) {
 		this._api.deleteDeck(id)
 			.then(() => {
 				const i = this.decks.findIndex(d => d.id === id)
 				this.decks.splice(i, 1)
 			})
+		event.stopPropagation()
 	}
 }
