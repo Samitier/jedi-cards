@@ -1,0 +1,30 @@
+<div class="sm-container">
+	<h1 class="text-center">Tus mazos</h1>
+	<ul >
+		<li
+			*ngFor="let deck of decks"
+			class="row middle-xs"
+			[routerLink]="['/deck', deck.id]"
+		>
+			<div class="col-xs-10">
+				<h2>{{ deck.title }}</h2>
+				<h5>{{ deck.description }}</h5>
+			</div>
+			<div class="col-xs-2 text-right">
+				<i 
+					(click)="onDeleteDeck(deck.id)"
+					class="material-icons delete-deck"
+				>delete</i>
+			</div>
+		</li>
+	</ul>
+	<div class="text-center">
+		<i *ngIf="!decks.length && !isLoading">
+			¡Vaya! Todavía no tienes creado ningún mazo.
+			<br>
+		</i>
+		<a [routerLink]="'/deck/create'" class="underline">
+			Crea un nuevo mazo.
+		</a>
+	</div>
+</div>

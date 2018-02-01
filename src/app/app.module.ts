@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core'
 import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component'
 import { RouterModule } from '@angular/router'
+import { CookieService } from 'ng2-cookies'
 import { routes } from './routes'
 import { ApiService } from './_shared/_services/api.service'
+import { AuthService } from './_shared/_services/auth.service'
 
 @NgModule({
 	declarations: [
@@ -16,7 +18,9 @@ import { ApiService } from './_shared/_services/api.service'
 		BrowserModule
 	],
 	providers: [
-		ApiService
+		ApiService,
+		AuthService,
+		CookieService,
 	],
 	bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-<div class="login">
+<div class="login xs-container">
 	<h1 class="text-center">♢ JEDI Cards ♢</h1>
 	<h4 class="text-center">Por favor, introduce tu usuario y contraseña.</h4>
 	<div class="form-section">
@@ -12,7 +12,7 @@
 			name="password" 
 			[(ngModel)]="password"
 		>
-		<small *ngIf="!isPasswordCorrect()">
+		<small *ngIf="password && !isPasswordCorrect()">
 			El password debe tener mínimo {{ minLengthPassword }} letras.
 		</small>
 	</div>
@@ -20,6 +20,10 @@
 	<a 
 		class="btn btn-ok"
 		(click)="onSend()"
-		[class.disabled]="!password || !email || !isPasswordCorrect()"
-	>Entrar</a>
+		[class.disabled]="!password || !email || !isPasswordCorrect() || isLoading"
+	>{{ isLoading ? 'Cargando...' : 'Entrar' }}</a>
+	<div class="text-center">
+		Si no tienes una cuenta, créate una 
+		<a class="underline" [routerLink]="'/signin'">aquí</a>.
+	</div>
 </div>

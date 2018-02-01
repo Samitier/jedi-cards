@@ -1,8 +1,9 @@
-<div class="login">
+<div class="login xs-container">
 		<h1 class="text-center">♢ JEDI Cards ♢</h1>
 		<h4 class="text-center">Regístrate a la aplicación</h4>
 		<form
 			#signInForm="ngForm"
+			(keyup.enter)="isFormSendable(signInForm.valid) && onSend()"
 		>
 			<div class="form-section">
 				<label for="name">Nombre</label>
@@ -78,7 +79,7 @@
 		<a 
 			class="btn btn-ok" 
 			(click)="onSend()"
-			[class.disabled]="!signInForm.valid || !arePasswordsEqual()"
-		>Entrar</a>
+			[class.disabled]="!isFormSendable(signInForm.valid)"
+		>{{ isLoading ? 'Cargando...' : 'Entrar' }}</a>
 	</div>
 	
