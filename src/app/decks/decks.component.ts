@@ -13,6 +13,8 @@ export class DecksComponent implements OnInit {
 	decks: Deck[] = []
 	isLoading = true
 
+	private deckToDeleteId: string
+
 	constructor(
 		private _api: ApiService
 	) {}
@@ -29,12 +31,16 @@ export class DecksComponent implements OnInit {
 	}
 
 	onDeleteDeck(id: string, event: MouseEvent) {
-		// this._api.deleteDeck(id)
-		// 	.then(() => {
-		// 		const i = this.decks.findIndex(d => d.id === id)
-		// 		this.decks.splice(i, 1)
-		// 	})
 		this.deletePopup.openPopup()
+		this.deckToDeleteId = id
 		event.stopPropagation()
+	}
+
+	onAcceptDelete() {
+		this._api.deleteDeck(this.deckToDeleteId)
+			.then(() => {
+				const i = this.decks.findIndex(d => d.id === this.deckToDeleteId)
+				this.decks.splice(i, 1)
+			})
 	}
 }
