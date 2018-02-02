@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core'
-import { ApiService } from '../_shared/_services/api.service'
+import { Component, OnInit, ViewChild } from '@angular/core'
+import { ApiService } from '../_shared/services/api.service'
 import Deck from '../_models/deck.model'
+import { AppPopupComponent } from '../_shared/components/app-popup/app-popup.component';
 
 @Component({
 	selector: 'app-decks',
@@ -16,6 +17,8 @@ export class DecksComponent implements OnInit {
 		private _api: ApiService
 	) {}
 
+	@ViewChild('deletePopup') deletePopup: AppPopupComponent
+
 	ngOnInit() {
 		this._api
 			.getDecks()
@@ -26,11 +29,12 @@ export class DecksComponent implements OnInit {
 	}
 
 	onDeleteDeck(id: string, event: MouseEvent) {
-		this._api.deleteDeck(id)
-			.then(() => {
-				const i = this.decks.findIndex(d => d.id === id)
-				this.decks.splice(i, 1)
-			})
+		// this._api.deleteDeck(id)
+		// 	.then(() => {
+		// 		const i = this.decks.findIndex(d => d.id === id)
+		// 		this.decks.splice(i, 1)
+		// 	})
+		this.deletePopup.openPopup()
 		event.stopPropagation()
 	}
 }

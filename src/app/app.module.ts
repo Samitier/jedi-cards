@@ -5,17 +5,20 @@ import { AppComponent } from './app.component'
 import { RouterModule } from '@angular/router'
 import { CookieService } from 'ng2-cookies'
 import { routes } from './routes'
-import { ApiService } from './_shared/_services/api.service'
-import { AuthService } from './_shared/_services/auth.service'
+import { ApiService } from './_shared/services/api.service'
+import { AuthService } from './_shared/services/auth.service'
+import { AppPopupComponent } from './_shared/components/app-popup/app-popup.component'
+import { SharedModule } from './_shared/shared.module'
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
 	],
 	imports: [
 		RouterModule.forRoot(routes),
 		HttpClientModule,
-		BrowserModule
+		BrowserModule,
+		SharedModule
 	],
 	providers: [
 		ApiService,

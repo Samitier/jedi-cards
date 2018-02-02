@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
 import { DeckDetailComponent } from './deck-detail.component'
 import { RouterModule } from '@angular/router'
-import { FormsModule } from '@angular/forms'
+import { SharedModule } from '../_shared/shared.module';
 
 @NgModule({
 	imports: [
@@ -10,8 +9,7 @@ import { FormsModule } from '@angular/forms'
 			{ path: 'create', component: DeckDetailComponent },
 			{ path: ':id', component: DeckDetailComponent },
 		]),
-		FormsModule,
-		CommonModule
+		SharedModule
 	],
 	declarations: [DeckDetailComponent]
 })

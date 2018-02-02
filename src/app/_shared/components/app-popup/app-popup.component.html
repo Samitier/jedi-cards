@@ -1,0 +1,8 @@
+<div class="popup" *ngIf="isOpen">
+	<h3 class="popup-title" *ngIf="popupTitle">{{ popupTitle }}</h3>
+	<div class="popup-body">
+		<ng-content></ng-content>
+	</div>
+	
+</div>
+<div class="popup-backdrop" *ngIf="isOpen"></div>
