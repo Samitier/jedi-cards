@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 import { ApiService } from '../_shared/services/api.service'
 import { Router } from '@angular/router'
+import { AlertService } from '../_shared/services/alert.service'
 
 @Component({
 	selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent {
 
 	constructor(
 		private _api: ApiService,
+		private _alert: AlertService,
 		private _router: Router
 	) {}
 
@@ -33,6 +35,7 @@ export class LoginComponent {
 			.catch(error => {
 				console.log(error)
 				this.isLoading = false
+				this._alert.error('El nombre de usuario o contraseña no son correctos.')
 			})
 	}
 

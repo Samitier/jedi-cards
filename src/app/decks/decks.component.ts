@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core'
 import { ApiService } from '../_shared/services/api.service'
 import Deck from '../_models/deck.model'
-import { AppPopupComponent } from '../_shared/components/app-popup/app-popup.component';
+import { AppPopupComponent } from '../_shared/components/app-popup/app-popup.component'
+import { AlertService } from '../_shared/services/alert.service'
 
 @Component({
 	selector: 'app-decks',
@@ -16,7 +17,8 @@ export class DecksComponent implements OnInit {
 	private deckToDeleteId: string
 
 	constructor(
-		private _api: ApiService
+		private _api: ApiService,
+		private _alert: AlertService
 	) {}
 
 	@ViewChild('deletePopup') deletePopup: AppPopupComponent
@@ -41,6 +43,8 @@ export class DecksComponent implements OnInit {
 			.then(() => {
 				const i = this.decks.findIndex(d => d.id === this.deckToDeleteId)
 				this.decks.splice(i, 1)
+				this._alert.info('Mazo borrado con éxito.')
 			})
+			.catch(() => this._alert.error('Ha ocurrido algún error inesperado.'))
 	}
 }

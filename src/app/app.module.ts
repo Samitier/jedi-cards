@@ -9,6 +9,7 @@ import { ApiService } from './_shared/services/api.service'
 import { AuthService } from './_shared/services/auth.service'
 import { AppPopupComponent } from './_shared/components/app-popup/app-popup.component'
 import { SharedModule } from './_shared/shared.module'
+import { AlertService } from './_shared/services/alert.service'
 
 @NgModule({
 	declarations: [
@@ -24,6 +25,7 @@ import { SharedModule } from './_shared/shared.module'
 		ApiService,
 		AuthService,
 		CookieService,
+		AlertService
 	],
 	bootstrap: [AppComponent]
 })

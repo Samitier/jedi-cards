@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { AppPopupComponent } from './components/app-popup/app-popup.component';
-import { FormsModule } from '@angular/forms';
+import { AppPopupComponent } from './components/app-popup/app-popup.component'
+import { FormsModule } from '@angular/forms'
+import { AppAlertComponent } from './components/app-alert/app-alert.component'
 
 @NgModule({
 	imports: [
@@ -9,12 +10,14 @@ import { FormsModule } from '@angular/forms';
 		FormsModule
 	],
 	declarations: [
-		AppPopupComponent
+		AppPopupComponent,
+		AppAlertComponent
 	],
 	exports: [
 		FormsModule,
 		CommonModule,
-		AppPopupComponent
+		AppPopupComponent,
+		AppAlertComponent
 	]
 })
 export class SharedModule { }
